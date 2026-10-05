@@ -1,0 +1,17 @@
+[DEFAULT]
+# Desactiva TODOS los jails que vienen por defecto en la imagen (sshd, etc.)
+# Solo se activa el jail http-flood que definimos abajo.
+enabled = false
+
+[http-flood]
+enabled  = true
+port     = http,https
+filter   = http-flood
+logpath  = /var/log/nginx/access.log
+findtime = 10
+maxretry = 60
+bantime  = 600
+bantime.increment = true
+bantime.factor = 2
+bantime.maxtime = 86400
+action   = iptables-allports[name=http-flood]

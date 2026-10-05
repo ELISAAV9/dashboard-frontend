@@ -1,0 +1,8 @@
+services:
+  frontend:
+    build: .
+    container_name: dashboard-frontend
+    cap_add:
+      - NET_ADMIN   # fail2ban necesita esto para crear reglas iptables dentro del contenedor
+    ports:
+      - "8082:80"
