@@ -1,7 +1,6 @@
 [DEFAULT]
-# Desactiva TODOS los jails que vienen por defecto en la imagen (sshd, etc.)
-# Solo se activa el jail http-flood que definimos abajo.
 enabled = false
+ignoreip = 127.0.0.1/8 ::1 172.16.0.0/12 192.168.0.0/16 10.0.0.0/8
 
 [http-flood]
 enabled  = true
