@@ -1,0 +1,46 @@
+PS C:\IDocker\dashboard-frontend> docker run --rm `
+>>   --add-host=host.docker.internal:host-gateway `
+>>   -v C:\IDocker\dashboard-frontend\reports:/reports `
+>>   projectdiscovery/nuclei:latest `
+>>   -u http://host.docker.internal:8082 `
+>>   -severity medium,high,critical `
+>>   -rate-limit 20 -c 10 `
+>>   -jsonl -o /reports/nuclei-results.jsonl
+
+                     __     _
+   ____  __  _______/ /__  (_)
+  / __ \/ / / / ___/ / _ \/ /
+ / / / / /_/ / /__/ /  __/ /
+/_/ /_/\__,_/\___/_/\___/_/   v3.11.1
+
+                projectdiscovery.io
+
+[INF] nuclei-templates are not installed, installing...
+[INF] Successfully installed nuclei-templates at /root/nuclei-templates
+[INF] Current nuclei version: v3.11.1 (latest)
+[INF] Current nuclei-templates version: v10.5.0 (latest)
+[INF] New templates added in latest release: 295
+[INF] Templates loaded for current scan: 6607
+[INF] Executing 6607 signed templates from projectdiscovery/nuclei-templates
+[INF] Targets loaded for current scan: 1
+[INF] Templates clustered: 369 (Reduced 312 Requests)
+[INF] Using Interactsh Server: oast.online
+[INF] Skipped host.docker.internal:8082 from target list as found unresponsive permanently: cause="i/o timeout" address=host.docker.internal:8082
+[INF] Skipped host.docker.internal:8082 from target list as found unresponsive permanently: cause="i/o timeout" address=host.docker.internal:8082
+[INF] Skipped host.docker.internal:8082 from target list as found unresponsive permanently: cause="i/o timeout" address=host.docker.internal:8082
+[INF] Skipped host.docker.internal:8082 from target list as found unresponsive permanently: cause="i/o timeout" address=host.docker.internal:8082
+[INF] Skipped host.docker.internal:8082 from target list as found unresponsive permanently: cause="i/o timeout" address=host.docker.internal:8082
+[INF] Skipped host.docker.internal:8082 from target list as found unresponsive permanently: cause="i/o timeout" address=host.docker.internal:8082
+[INF] Skipped host.docker.internal:8082 from target list as found unresponsive permanently: cause="i/o timeout" address=host.docker.internal:8082
+[INF] Skipped host.docker.internal:8082 from target list as found unresponsive permanently: cause="i/o timeout" address=host.docker.internal:8082
+[INF] Skipped host.docker.internal:8082 from target list as found unresponsive 30 times
+[INF] Skipped host.docker.internal:8082 from target list as found unresponsive 30 times
+[INF] Skipped host.docker.internal:8082 from target list as found unresponsive 30 times
+[INF] Skipped host.docker.internal:8082 from target list as found unresponsive 30 times
+[INF] Skipped host.docker.internal:8082 from target list as found unresponsive permanently: Get "http://host.docker.internal:8082/?deleted=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-deleted%27%29%3E&search=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-search%27%29%3E&action=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-action%27%29%3E&newname=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-newname%27%29%3E&info=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-info%27%29%3E&content=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-content%27%29%3E&signature=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-signature%27%29%3E&noconfirmation=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-noconfirmation%27%29%3E&field=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-field%27%29%3E&output=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-output%27%29%3E&city=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-city%27%29%3E&rename=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-rename%27%29%3E&mail=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-mail%27%29%3E&term=%27%3E%22%3Csvg%2Fonload=confirm%28%27xss-term%27%29%3E": cause="i/o timeout" address=host.docker.internal:8082
+[INF] Skipped host.docker.internal:4040 from target list as found unresponsive permanently: cause="port closed or filtered" address=host.docker.internal:4040 chain="network is unreachable; connection refused; got err while executing https://host.docker.internal:4040/jobs/?\"'><script>alert(document.domain)</script>"
+[INF] Skipped host.docker.internal:8082 from target list as found unresponsive 33 times
+[INF] Scan completed in 25m. 0 matches found.
+[INF] HTTP connections: 4948 total, 1278 new, 3670 reused (74.2%)
+PS C:\IDocker\dashboard-frontend> Get-Content C:\IDocker\dashboard-frontend\reports\nuclei-results.jsonl
+PS C:\IDocker\dashboard-frontend>     
