@@ -1,0 +1,8 @@
+fix: ocultar version de nginx (fingerprinting)
+
+Nuclei detecto la version exacta de nginx (1.27.5) en el header
+Server (tech-detect, nginx-version, nginx-eol), lo cual facilita
+buscar CVEs especificos de esa version.
+
+Se agrega server_tokens off; para que el header Server solo
+muestre 'nginx' sin numero de version.

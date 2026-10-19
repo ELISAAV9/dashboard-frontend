@@ -1,0 +1,13 @@
+fix: agregar cabeceras de seguridad HTTP faltantes
+
+Nuclei detecto 9 cabeceras de seguridad ausentes en las respuestas
+del frontend (http-missing-security-headers, CWE-693): X-Frame-Options,
+X-Content-Type-Options, Referrer-Policy, Content-Security-Policy,
+Permissions-Policy, Cross-Origin-Opener-Policy,
+Cross-Origin-Resource-Policy, Cross-Origin-Embedder-Policy,
+X-Permitted-Cross-Domain-Policies.
+
+Se agregan las 10 cabeceras recomendadas, incluyendo HSTS. El CSP
+incluye connect-src explicito permitiendo Keycloak (8081) y el
+backend (8090), necesarios para que el login y las peticiones a
+la API sigan funcionando.
